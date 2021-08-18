@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
+import { Container } from 'react-bootstrap';
 import AppNav from './Nav.jsx';
-// import '../../../particles.js';
-//const particleJS = pJS();
-
-// particlesJS.load('particles-js', '../../../particles.json', function() {
-//   console.log('callback - particles.js config loaded');
-// });
-
+import Welcome from './Welcome.jsx';
 
 class App extends Component {
   constructor() {
@@ -15,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <AppNav />
+        <AppNav />
     )
   }
 }
