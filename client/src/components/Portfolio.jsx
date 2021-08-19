@@ -9,6 +9,7 @@ class Portfolio extends Component {
   }
 
   handleClick(location) {
+    $('#upper').css({height: '100vh'});
     if (location === 'home') {
       $('#portfolio').animate({top: '-200vh'}, 2000);
       $('#welcome-container').animate({left: '0'}, 2000);
@@ -25,60 +26,15 @@ class Portfolio extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row id="portfolio-header-row">
           <Col align="center">
             <h2 id="portfolio-header">Portfolio</h2>
           </Col>
         </Row>
-        <Row xs={1} md={2} className="g-4">
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="https://via.placeholder.com/100x160" className="card-img"/>
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="https://via.placeholder.com/100x160" className="card-img"/>
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="https://via.placeholder.com/100x160" className="card-img"/>
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="https://via.placeholder.com/100x160" className="card-img"/>
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+        <Row id="portfolio-row-1">
+          <Col md={3} className="portfolio-card">
+            <span>Project</span>
+          </Col>
         </Row>
       </Container>
     )

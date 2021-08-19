@@ -6,10 +6,15 @@
   display: none;
 }
 
+#upper {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #particles-js {
   background-color: black;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   position: absolute;
 }
 
@@ -152,6 +157,21 @@
   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
   cursor: pointer;
   transition-delay: .25s;
+}
+
+#portfolio-header-row {
+  padding-top: 50px;
+}
+
+#portfolio-row-1 {
+  height: 20rem;
+  padding-top: 2rem;
+}
+
+.portfolio-card {
+  width: 40vw;
+  border: 2px solid #2196f3;
+  color: white;
 }
 
 #social-row {

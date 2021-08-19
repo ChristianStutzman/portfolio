@@ -1,4 +1,5 @@
-particlesJS('particles-js', {
+const renderParticles = () => {
+  particlesJS('particles-js', {
     "particles": {
       "number": {
         "value": 160,
@@ -108,3 +109,6 @@ particlesJS('particles-js', {
     },
     "retina_detect": true
   });
+}
+
+export default renderParticles;

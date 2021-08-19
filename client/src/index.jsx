@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App.jsx';
-import './components/particles.js';
+import renderParticles from './components/particles.js';
 
+renderParticles();
 
 // render(
 // <React.Fragment>

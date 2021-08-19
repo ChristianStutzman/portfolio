@@ -2,6 +2,7 @@ import React, { Component, useEffect } from 'react';
 import {Container, Row, Col, Button } from 'react-bootstrap';
 import { render } from 'react-dom';
 import $ from 'jquery';
+import renderParticles from './particles.js';
 
 class Welcome extends Component {
   constructor(props) {
@@ -10,27 +11,6 @@ class Welcome extends Component {
 
 
   componentDidMount() {
-    // setTimeout(() => {
-    //   setTimeout(function() {
-    //     $('#hello-txt').addClass('fadeIn');
-    //   }, 1500);
-    //   setTimeout(function() {
-    //     $('#hello-txt').removeClass('hide');
-    //   }, 1500);
-
-    //   $('#hello').addClass('animate-hello');
-
-    //   $('#hello-container').fadeOut(100).delay(2800).fadeIn();
-
-    //   setTimeout(function() {
-    //     $('#hello').removeClass('animate-hello');
-    //   }, 3200);
-
-    //   //remove fadeIn class after 1500ms
-    //   setTimeout(function() {
-    //     $('#hello-txt').removeClass('fadeIn');
-    //   }, 1500);
-    // }, 500)
     setTimeout(() => {
       $('#hello-txt').animate({opacity: '100%'}, 2500);
     }, 1000)
@@ -40,6 +20,7 @@ class Welcome extends Component {
     if (location === 'portfolio') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#portfolio').animate({top: '0'}, 2000);
+      $('#upper').css({height: '200vh'}, 2000);
     } else if (location === 'skills') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#skills').animate({left: '0'}, 2000);
