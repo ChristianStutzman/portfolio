@@ -31,6 +31,9 @@ class Welcome extends Component {
     //     $('#hello-txt').removeClass('fadeIn');
     //   }, 1500);
     // }, 500)
+    setTimeout(() => {
+      $('#hello-txt').animate({opacity: '100%'}, 2500);
+    }, 1000)
   }
 
   handleClick(location) {
@@ -48,7 +51,7 @@ class Welcome extends Component {
       <Container align="center" id="welcome-container">
         <Row id="hello">
           <div id="hello-container" >
-            <span id="hello-txt" >Hello</span>
+            <span id="hello-txt">Hello</span>
           </div>
         </Row>
         <Row>

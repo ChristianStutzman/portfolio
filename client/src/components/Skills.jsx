@@ -94,6 +94,9 @@ class Skills extends Component {
     if (location === 'home') {
       $('#skills').animate({left: '200vw'}, 2000);
       $('#welcome-container').animate({left: '0'}, 2000);
+    } else if (location === 'portfolio') {
+      $('#skills').animate({left: '200vw'}, 2000);
+      $('#portfolio').animate({top: '0'}, 2000);
     }
   }
 
@@ -104,6 +107,11 @@ class Skills extends Component {
           <Col md={2}>
             <div className="portfolio-btn-container">
               <div className="portfolio-btn" onClick={() => this.handleClick('home')}>Home</div>
+            </div>
+          </Col>
+          <Col md={{span:2, offset:3}}>
+            <div className="portfolio-btn-container">
+              <div className="portfolio-btn" onClick={() => this.handleClick('portfolio')}>Portfolio</div>
             </div>
           </Col>
         </Row>

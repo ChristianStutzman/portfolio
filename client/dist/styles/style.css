@@ -56,9 +56,12 @@
   letter-spacing: 8px;
   font-weight: bold;
   padding-top: 5vh;
+  opacity: 0;
 }
 
-
+#hello-container {
+  position: absolute;
+}
 
 #welcome-container {
   position: absolute;
