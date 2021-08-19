@@ -204,13 +204,16 @@
 
 .skill-icon {
   height: 20vh;
-  transition: background-color 2s ease-out 100ms;
+  transition: background-color 1s;
   padding: 0 15px;
 }
 
-.skill-icon:hover {
+.skill-icon.info {
   background-color: #2558844b;
 }
+/* .skill-icon:hover {
+  background-color: #2558844b;
+} */
 
 .skill-icon-top {
   height: 66.66%;
@@ -230,6 +233,6 @@
   font-size: 130%;
 }
 
-.skill-icon.transition {
-  transition: height .25s linear;
+.skill-row {
+  transition: opacity 500ms;
 }

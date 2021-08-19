@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { render } from 'react-dom';
 import $ from 'jquery';
-import { Transition } from 'react-transition-group';
+import { TransitionGroup, CSSTransition, Transition } from 'react-transition-group';
 
 const skillsInfoTop = [
   {
@@ -42,7 +42,7 @@ const skillsInfoBottom = [
 
 
 
-const defaultStyles= {
+const defaultStyle = {
   transition: `opacity 300ms ease-in-out`,
   opacity: 0,
 };
@@ -77,17 +77,32 @@ class Skills extends Component {
       info: 'newInfo',
       index: index
     }
-    node.classList.add('transition')
-    this.setState(tempState);
-    this.setState({transition:true})
+    let $node = $(`#icon-${location}-${index}`);
+    $node.stop(true, true);
+    $node.animate({opacity:'0'}, 1000);
+    setTimeout(() => {
+      this.setState(tempState);
+      $node.animate({opacity:'100'}, 1000);
+    }, 1000)
   }
 
   handleExit(location, index, node) {
     let tempState = this.state;
+    let $node = $(`#icon-${location}-${index}`);
+    $node.stop(true, true);
     tempState[location][index] = location === 'topSkills' ? skillsInfoTop[index] : skillsInfoBottom[index];
-    node.classList.remove('transition')
-    this.setState(tempState);
-    this.setState({transition:false})
+    $node.animate({opacity:'0'}, 1000);
+    $node.removeClass('info');
+    setTimeout(() => {
+      this.setState(tempState);
+      $node.animate({opacity:'100'}, 1000);
+    }, 1000)
+
+
+
+
+    // this.setState(tempState);
+    // this.setState({transition:false})
   }
 
   handleClick(location) {
@@ -98,6 +113,65 @@ class Skills extends Component {
       $('#skills').animate({left: '200vw'}, 2000);
       $('#portfolio').animate({top: '0'}, 2000);
     }
+  }
+
+
+  renderSingleSkill(skill, row) {
+    if (skill.skill) {
+      return (
+        <Col
+          className="skill-icon"
+          id={`icon-${row}-${skill.index}`}
+          onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
+          onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
+        >
+          <Row
+            align="center"
+            className="skill-icon-top"
+          >
+            <i className={skill.icon}></i>
+          </Row>
+          <Row align="center" className="skill-icon-bottom">
+            <span className="skill-text">{skill.skill}</span>
+          </Row>
+        </Col>
+        )
+      } else {
+        return (
+          <Col
+            className="skill-icon info"
+            id={`icon-${row}-${skill.index}`}
+            onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
+            onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
+          >
+            <Row
+              align="center"
+              className="skill-icon-top"
+            >
+              <span>{skill.info}</span>
+            </Row>
+          </Col>
+        )
+      }
+  }
+
+
+
+  renderSkills(topSkills, bottomSkills) {
+    return (
+      <React.Fragment>
+        <Row className="skill-row">
+          {topSkills.map(skill => {
+            return this.renderSingleSkill(skill, 'topSkills');
+          })}
+        </Row>
+        <Row className="skill-row">
+        {bottomSkills.map(skill => {
+          return this.renderSingleSkill(skill, 'bottomSkills');
+          })}
+        </Row>
+      </React.Fragment>
+    )
   }
 
   render() {
@@ -118,43 +192,71 @@ class Skills extends Component {
         <Row align="center" id="skills-header-row">
           <h2>Skills</h2>
         </Row>
-        <Row className="skill-row">
-          {this.state.topSkills.map(skill => {
-            if (skill.skill) {
-              return (
-                <Col
-                  className="skill-icon"
-                  onMouseEnter={(event) => this.handleEntry('topSkills', skill.index, event.target)}
-                  onMouseLeave={(event) => this.handleExit('topSkills', skill.index, event.target)}
-                >
-                  <Row
-                    align="center"
-                    className="skill-icon-top"
-                  >
-                    <i className={skill.icon}></i>
-                  </Row>
-                  <Row align="center" className="skill-icon-bottom">
-                    <span className="skill-text">{skill.skill}</span>
-                  </Row>
-                </Col>
-              )
-            } else {
-              return (
-                <Col
-                  className="skill-icon"
-                  onMouseEnter={(event) => this.handleEntry('topSkills', skill.index, event.target)}
-                  onMouseLeave={(event) => this.handleExit('topSkills', skill.index, event.target)}
-                >
-                  <Row
-                    align="center"
-                    className="skill-icon-top"
-                  >
-                    <span>{skill.info}</span>
-                  </Row>
-                </Col>
-              )
-            }
-          })}
+        {this.renderSkills(this.state.topSkills, this.state.bottomSkills)}
+
+
+
+
+
+        {/* <Row className="skill-row">
+            {this.state.topSkills.map(skill => {
+              if (skill.skill) {
+                return (
+                    <Transition
+                      in={!!skill.skill}
+                      timeout={300}
+                    >
+                      {state => (
+                        <Col
+                          className="skill-icon"
+                          onMouseEnter={(event) => this.handleEntry('topSkills', skill.index, event.target)}
+                          onMouseLeave={(event) => this.handleExit('topSkills', skill.index, event.target)}
+                          style={{
+                            ...defaultStyle,
+                            ...transitionStyles[state]
+                          }}
+                        >
+                          <Row
+                            align="center"
+                            className="skill-icon-top"
+                          >
+                            <i className={skill.icon}></i>
+                          </Row>
+                          <Row align="center" className="skill-icon-bottom">
+                            <span className="skill-text">{skill.skill}</span>
+                          </Row>
+                        </Col>
+                      )}
+                    </Transition>
+                  )
+                } else {
+                  return (
+                    <Transition
+                      in={!!skill.skill}
+                      timeout={300}
+                    >
+                      {state => (
+                        <Col
+                          className="skill-icon"
+                          onMouseEnter={(event) => this.handleEntry('topSkills', skill.index, event.target)}
+                          onMouseLeave={(event) => this.handleExit('topSkills', skill.index, event.target)}
+                          style={{
+                            ...defaultStyle,
+                            ...transitionStyles[state]
+                          }}
+                        >
+                          <Row
+                            align="center"
+                            className="skill-icon-top"
+                          >
+                            <span>{skill.info}</span>
+                          </Row>
+                        </Col>
+                      )}
+                    </Transition>
+                  )
+                }
+            })}
         </Row>
         <Row className="skill-row">
         {this.state.bottomSkills.map(skill => {
@@ -193,8 +295,16 @@ class Skills extends Component {
               )
             }
           })}
-        </Row>
+        </Row> */}
       </Container>
+
+
+
+
+
+
+
+
     //   <Container id="skills-container">
     //     <Row align="center" id="skills-header-row">
     //       <h2>Skills</h2>
