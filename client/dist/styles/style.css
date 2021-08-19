@@ -1,25 +1,94 @@
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.hide {
+  display: none;
+}
+
 #particles-js {
   background-color: black;
-  width: auto;
+  width: 100vw;
   height: 100vh;
   position: absolute;
 }
+
+#portfolio-header {
+  font-weight: bold;
+  color: #2196f3;
+  font-size: 40px;
+  letter-spacing: 8px;
+}
+
+@keyframes animate {
+  10% {
+    transform: scale(1, 0.002);
+  }
+  35% {
+    transform: scale(0.2, 0.002);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.2, 0.002);
+    opacity: 0;
+  }
+  85% {
+    transform: scale(1, 0.002);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.animate-hello {
+  animation: animate 3s ease;
+}
+
+#hello {
+  height: 30vh;
+  align-items: center;
+}
+
+#hello-txt {
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: bold;
+  padding-top: 5vh;
+}
+
+
 
 #welcome-container {
   position: absolute;
   color: white;
   z-index: 1;
   text-align: center;
-  margin-top: 40vh;
+  margin-top: 10vh;
   margin-right: 0;
   width: 100vw;
   min-width: 100%;
+}
+
+#skills {
+  position: absolute;
+  z-index: 1;
+  left: 200vw;
+  top: 0;
+  padding-top: 75px;
+  min-width: 100%;
+  min-height: 100vh;
 }
 
 #portfolio {
   position: relative;
   z-index: 1;
   top: -200vh;
+}
+
+#portfolio-container {
+  padding-top: 40px;
 }
 
 #upper {
@@ -40,12 +109,21 @@
   transition: 0.2s;
 }
 
+#welcome-name {
+  text-transform: uppercase;
+}
+
 #welcome-name:hover {
   text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
   transition-delay: .25s;
 }
 
-#portfolio-btn-container {
+#welcome-btn-row {
+  height: 20vh;
+  align-items: flex-end;
+}
+
+.portfolio-btn-container {
   margin: 0;
   padding: 0;
   display: flex;
@@ -53,7 +131,7 @@
   align-items: center;
 }
 
-#portfolio-btn {
+.portfolio-btn {
   display: inline-block;
   padding: 15px 30px;
   color: #2196f3;
@@ -65,7 +143,7 @@
   transition: 0.2s;
 }
 
-#portfolio-btn:hover {
+.portfolio-btn:hover {
   color: #255784;
   background: #2196f3;
   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
@@ -74,7 +152,7 @@
 }
 
 #social-row {
-  height: 40vh;
+  height: 30vh;
   align-content: flex-end;
 }
 
@@ -101,10 +179,24 @@
   height: 300px;
 }
 
-#skills-container {
+/* #skills-container {
   background: #eaf2fa;
   color: rgb(121, 85, 72);
   min-width: 100%;
+} */
+
+#skills-container {
+  color: #2196f3;
+  min-width: 100%;
+}
+
+#skills-header-row {
+  min-height: 15vh;
+  align-content: center;
+}
+
+.skills-btn-row {
+  padding-bottom: 75px;
 }
 
 .skill-icon {
@@ -133,4 +225,8 @@
 
 .skill-text {
   font-size: 130%;
+}
+
+.skill-icon.transition {
+  transition: height .25s linear;
 }
