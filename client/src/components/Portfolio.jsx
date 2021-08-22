@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import { render } from 'react-dom';
 import $ from 'jquery';
 
@@ -31,9 +31,32 @@ class Portfolio extends Component {
             <h2 id="portfolio-header">Portfolio</h2>
           </Col>
         </Row>
-        <Row id="portfolio-row-1">
-          <Col md={3} className="portfolio-card">
+        <Row className="portfolio-row">
+          <Col md={5} className="portfolio-card">
+            <Row className="portfolio-img">
+              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            </Row>
             <span>Project</span>
+          </Col>
+          <Col md={{span:5, offset:2}} className="portfolio-card">
+            <Row className="portfolio-img">
+              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            </Row>
+            <span>Project 2</span>
+          </Col>
+        </Row>
+        <Row className="portfolio-row">
+          <Col md={5} className="portfolio-card">
+            <Row className="portfolio-img">
+              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            </Row>
+            <span>Project</span>
+          </Col>
+          <Col md={{span:5, offset:2}} className="portfolio-card">
+            <Row className="portfolio-img">
+              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            </Row>
+            <span>Project 2</span>
           </Col>
         </Row>
       </Container>
