@@ -33,28 +33,28 @@ class Portfolio extends Component {
         </Row>
         <Row className="portfolio-row">
           <Col md={5} className="portfolio-card">
-            <Row className="portfolio-img">
-              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            <Row className="portfolio-img-row">
+              <Image className="portfolio-img" src="./assets/neighbr/landing.png" />
             </Row>
-            <span>Project</span>
+            {/* <span>Neighbr</span> */}
           </Col>
           <Col md={{span:5, offset:2}} className="portfolio-card">
-            <Row className="portfolio-img">
-              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            <Row className="portfolio-img-row">
+              <Image className="portfolio-img" src="./assets/catbird/Catbird-1.png" />
             </Row>
-            <span>Project 2</span>
+            {/* <span>Project 2</span> */}
           </Col>
         </Row>
         <Row className="portfolio-row">
           <Col md={5} className="portfolio-card">
-            <Row className="portfolio-img">
-              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            <Row className="portfolio-img-row">
+              <Image className="portfolio-img" src="./assets/blackjack/home.png" />
             </Row>
-            <span>Project</span>
+            {/* <span>Project</span> */}
           </Col>
           <Col md={{span:5, offset:2}} className="portfolio-card">
-            <Row className="portfolio-img">
-              <Image src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
+            <Row className="portfolio-img-row">
+              <Image className="portfolio-img" src="https://i.ytimg.com/vi/u2FhlVPvsU4/maxresdefault.jpg" />
             </Row>
             <span>Project 2</span>
           </Col>
