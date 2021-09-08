@@ -19,11 +19,14 @@ class Welcome extends Component {
   handleClick(location) {
     if (location === 'portfolio') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
-      $('#portfolio').animate({top: '0'}, 2000);
-      $('#upper').css({height: '200vh'}, 2000);
+      $('#portfolio').animate({top: '0'}, 4000);
+      $('#upper').css({height: '300vh'}, 2000);
     } else if (location === 'skills') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#skills').animate({left: '0'}, 2000);
+    } else if (location === 'about') {
+      $('#welcome-container').animate({left: '-100vw'}, 3000);
+      $('#about').animate({top: '0'}, 3000);
     }
   }
 
@@ -44,6 +47,11 @@ class Welcome extends Component {
           <Col>
           <div className="portfolio-btn-container">
             <div className="portfolio-btn" onClick={() => this.handleClick('portfolio')}>Portfolio</div>
+          </div>
+          </Col>
+          <Col>
+          <div className="portfolio-btn-container">
+            <div className="portfolio-btn" onClick={() => this.handleClick('about')}>About</div>
           </div>
           </Col>
           <Col>

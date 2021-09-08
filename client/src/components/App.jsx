@@ -4,6 +4,7 @@ import AppNav from './Nav.jsx';
 import Welcome from './Welcome.jsx';
 import Portfolio from './Portfolio.jsx';
 import Skills from './Skills.jsx';
+import About from './About.jsx';
 
 class App extends Component {
   constructor() {

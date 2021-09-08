@@ -14,7 +14,7 @@
 #particles-js {
   background-color: black;
   width: 100vw;
-  height: 200vh;
+  height: 300vh;
   position: absolute;
 }
 
@@ -25,29 +25,23 @@
   letter-spacing: 8px;
 }
 
-@keyframes animate {
-  10% {
-    transform: scale(1, 0.002);
-  }
-  35% {
-    transform: scale(0.2, 0.002);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(0.2, 0.002);
-    opacity: 0;
-  }
-  85% {
-    transform: scale(1, 0.002);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-  }
+.portfolio-img-row {
+  justify-content: center;
+  height: 75%;
 }
 
-.animate-hello {
-  animation: animate 3s ease;
+.portfolio-img {
+  width: 90%;
+  max-width: 100%;
+  padding: 10px 12px 10px 12px;
+}
+
+.portfolio-footer {
+  width: 100%;
+}
+
+.portfolio-link {
+  margin-right: 15px;
 }
 
 #hello {
@@ -92,7 +86,7 @@
 #portfolio {
   position: relative;
   z-index: 1;
-  top: -200vh;
+  top: -500vh;
 }
 
 #portfolio-container {
@@ -163,15 +157,25 @@
   padding-top: 50px;
 }
 
-#portfolio-row-1 {
-  height: 20rem;
-  padding-top: 2rem;
+.portfolio-row {
+  /* height: 45vh; */
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-card {
   width: 40vw;
   border: 2px solid #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
   color: white;
+  transition: 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.15);
+  cursor: pointer;
 }
 
 #social-row {
@@ -255,4 +259,54 @@
 
 .skill-row {
   transition: opacity 500ms;
+}
+
+#about {
+  position: absolute;
+  z-index: 1;
+  min-height: 100vh;
+  min-width: 100vw;
+  top: 300vh;
+}
+
+#about-header {
+  font-weight: bold;
+  color: #2196f3;
+  font-size: 40px;
+  letter-spacing: 8px;
+  padding-top: 5vh;
+}
+
+#about-img {
+  border-radius: 50%;
+  height: 30rem;
+  width: 30rem;
+}
+
+#about-img-row {
+  padding-top: 8vh;
+  padding-left: 5vw;
+}
+
+#about-text {
+  color: white;
+  padding-right: 5rem;
+}
+
+#about-btn-row {
+  padding-top: 40px;
+}
+
+.carousel-img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+.carousel-description {
+  padding-top: 10px;
+}
+
+.portfolio-modal .modal-content {
+  background-color: #404040;
+  color: white;
 }
