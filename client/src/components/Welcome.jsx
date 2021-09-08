@@ -19,14 +19,14 @@ class Welcome extends Component {
   handleClick(location) {
     if (location === 'portfolio') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
-      $('#portfolio').animate({top: '0'}, 2000);
-      $('#upper').css({height: '200vh'}, 2000);
+      $('#portfolio').animate({top: '0'}, 4000);
+      $('#upper').css({height: '300vh'}, 2000);
     } else if (location === 'skills') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#skills').animate({left: '0'}, 2000);
     } else if (location === 'about') {
-      $('#welcome-container').animate({left: '-100vw'}, 2000);
-      $('#about').animate({top: '0'}, 2000);
+      $('#welcome-container').animate({left: '-100vw'}, 3000);
+      $('#about').animate({top: '0'}, 3000);
     }
   }
 

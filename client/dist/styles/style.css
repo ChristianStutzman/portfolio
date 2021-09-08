@@ -14,7 +14,7 @@
 #particles-js {
   background-color: black;
   width: 100vw;
-  height: 200vh;
+  height: 300vh;
   position: absolute;
 }
 
@@ -78,7 +78,7 @@
 #portfolio {
   position: relative;
   z-index: 1;
-  top: -200vh;
+  top: -500vh;
 }
 
 #portfolio-container {
@@ -150,8 +150,11 @@
 }
 
 .portfolio-row {
-  height: 45vh;
+  /* height: 45vh; */
   padding-top: 10vh;
+  padding-bottom: 10vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-card {
@@ -255,7 +258,7 @@
   z-index: 1;
   min-height: 100vh;
   min-width: 100vw;
-  top: 200vh;
+  top: 300vh;
 }
 
 #about-header {
@@ -284,4 +287,9 @@
 
 #about-btn-row {
   padding-top: 40px;
+}
+
+.carousel-img {
+  max-width: 100%;
+  max-height: 70vh;
 }

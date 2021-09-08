@@ -10,8 +10,8 @@ class About extends Component {
 
   handleClick(location) {
     if (location === 'home') {
-      $('#about').animate({top: '200vh'}, 2000);
-      $('#welcome-container').animate({left: '0'}, 2000);
+      $('#about').animate({top: '300vh'}, 3000);
+      $('#welcome-container').animate({left: '0'}, 3000);
     }
   }
 
