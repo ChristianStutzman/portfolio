@@ -119,6 +119,7 @@ class Skills extends Component {
           id={`icon-${row}-${skill.index}`}
           onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
           onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
+          key={skill.skill}
         >
           <Row
             align="center"
@@ -138,6 +139,7 @@ class Skills extends Component {
             id={`icon-${row}-${skill.index}`}
             onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
             onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
+            key={`skill-${row}`}
           >
             <Row
               align="center"
