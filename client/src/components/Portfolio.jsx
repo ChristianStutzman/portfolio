@@ -19,7 +19,7 @@ class Portfolio extends Component {
   }
 
   handleClick(location) {
-    $('#upper').css({height: '100vh'});
+    $('#app').css({height: '100vh'});
     if (location === 'home') {
       $('#portfolio').animate({top: '-500vh'}, 4000);
       $('#welcome-container').animate({left: '0'}, 4000);

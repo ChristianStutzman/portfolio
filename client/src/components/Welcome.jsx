@@ -20,7 +20,7 @@ class Welcome extends Component {
     if (location === 'portfolio') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#portfolio').animate({top: '0'}, 4000);
-      $('#upper').css({height: '300vh'}, 2000);
+      $('#app').css({height: '300vh'}, 2000);
     } else if (location === 'skills') {
       $('#welcome-container').animate({left: '-100vw'}, 2000);
       $('#skills').animate({left: '0'}, 2000);
