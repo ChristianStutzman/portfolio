@@ -44,6 +44,10 @@
   margin-right: 15px;
 }
 
+.portfolio-btn.single-skill {
+  width: 90%;
+}
+
 #hello {
   height: 30vh;
   align-items: center;
@@ -222,15 +226,16 @@
   align-content: center;
 }
 
-.skills-btn-row {
+/* .skills-btn-row {
   padding-bottom: 75px;
-}
+} */
 
 .skill-icon {
   height: 20vh;
   transition: background-color 1s;
   padding: 0 15px;
 }
+
 
 .skill-icon.info {
   background-color: #2558844b;
@@ -309,4 +314,12 @@
 .portfolio-modal .modal-content {
   background-color: #404040;
   color: white;
+}
+
+.portfolio-btn.single-skill:hover {
+  cursor: default;
+}
+
+.skills-break {
+  border-bottom: 2px solid;
 }

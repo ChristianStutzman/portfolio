@@ -3,172 +3,162 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { render } from 'react-dom';
 import $ from 'jquery';
 import { TransitionGroup, CSSTransition, Transition } from 'react-transition-group';
+import {
+  SiRedux,
+  SiMaterialUi,
+  SiPostgresql,
+  SiMongodb,
+  SiMysql,
+  SiFirebase,
+  SiJest,
+  SiMocha,
+  SiGooglechrome,
+  SiHeroku,
+  SiWebpack,
+  SiBabel,
+  SiVim,
+  SiPostman
+} from 'react-icons/si';
+import { WiCloudy } from 'react-icons/wi';
+import { DiScrum } from 'react-icons/di';
+import { BiTransfer } from 'react-icons/bi';
+import SingleSkill from './SingleSkill.jsx';
 
-const skillsInfoTop = [
-  {
-    skill: 'Javascript',
-    icon: 'fab fa-js skill',
-    index: 0
-  },
-  {
-    skill: 'Databases',
-    icon: 'fas fa-database skill',
-    index: 1
-  },
-  {
-    skill: 'NodeJS',
-    icon: 'fab fa-node skill',
-    index: 2
-  }
-];
-
-const skillsInfoBottom = [
-  {
-    skill: 'React',
-    icon: 'fab fa-react skill',
-    index: 0
-  },
-  {
-    skill: 'Deployment',
-    icon: 'fab fa-aws skill',
-    index: 1
-  },
-  {
-    skill: 'Other',
-    icon: 'fab fa-aws skill',
-    index: 2
-  }
-];
-
-
-
-const defaultStyle = {
-  transition: `opacity 300ms ease-in-out`,
-  opacity: 0,
-};
-
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered:  { opacity: 1 },
-  exiting:  { opacity: 0 },
-  exited:  { opacity: 0 },
-};
-
-
+const skills = {
+  frontEnd: [
+    {
+      icon: <i className="fab fa-js"></i>,
+      label: 'JavaScript'
+    },
+    {
+      icon: <i className="fab fa-react"></i>,
+      label: 'React'
+    },
+    {
+      icon: <SiRedux />,
+      label: 'Redux'
+    },
+    {
+      icon: <i className="fab fa-html5"></i>,
+      label: 'HTML5'
+    },
+    {
+      icon: <i className="fab fa-html5"></i>,
+      label: 'CSS3'
+    },
+    {
+      icon: <i className="fab fa-bootstrap"></i>,
+      label: 'Bootstrap'
+    },
+    {
+      icon: <SiMaterialUi />,
+      label: 'Material-UI'
+    }
+  ],
+  backEnd: [
+    {
+      icon: <i className="fab fa-node-js"></i>,
+      label: 'NodeJS'
+    },
+    {
+      icon: <i className="fas fa-server"></i>,
+      label: 'Express'
+    },
+    {
+      icon: <SiPostgresql />,
+      label: 'PostgreSQL'
+    },
+    {
+      icon: <SiMongodb />,
+      label: 'MongoDB'
+    },
+    {
+      icon: <SiMysql />,
+      label: 'MySQL'
+    },
+    {
+      icon: <SiFirebase />,
+      label: 'Firebase'
+    },
+    {
+      icon: <BiTransfer />,
+      label: 'RESTful API Development'
+    }
+  ],
+  deployment: [
+    {
+      icon: <SiJest />,
+      label: 'Jest'
+    },
+    {
+      icon: <SiMocha />,
+      label: 'Mocha'
+    },
+    {
+      icon: <i className="fas fa-coffee" aria-hidden="true"></i>,
+      label: 'Chai'
+    },
+    {
+      icon: <WiCloudy />,
+      label: 'New Relic'
+    },
+    {
+      icon: <i className="fab fa-aws"></i>,
+      label: 'AWS'
+    },
+    {
+      icon: <SiHeroku />,
+      label: 'Heroku'
+    },
+    {
+      icon: <i className="fab fa-docker"></i>,
+      label: 'Docker'
+    }
+  ],
+  tools: [
+    {
+      icon: <i className="fab fa-git-alt"></i>,
+      label: 'Git'
+    },
+    {
+      icon: <i className="fab fa-npm"></i>,
+      label: 'NPM'
+    },
+    {
+      icon: <SiWebpack />,
+      label: 'Webpack'
+    },
+    {
+      icon: <SiBabel />,
+      label: 'Babel'
+    },
+    {
+      icon: <SiPostman />,
+      label: 'Postman'
+    },
+    {
+      icon: <SiVim />,
+      label: 'VIM'
+    },
+    {
+      icon: <DiScrum />,
+      label: 'Scrum'
+    }
+  ]
+}
 
 
 
 class Skills extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      topSkills: Array.from(skillsInfoTop),
-      bottomSkills: Array.from(skillsInfoBottom),
-      transition: false
-    }
-
-    this.handleEntry = this.handleEntry.bind(this);
-    this.handleExit = this.handleExit.bind(this);
-  }
-
-  handleEntry(location, index, node) {
-    let tempState = this.state;
-    tempState[location][index] = {
-      info: 'newInfo',
-      index: index
-    }
-    let $node = $(`#icon-${location}-${index}`);
-    $node.stop(true, true);
-    $node.animate({opacity:'0'}, 1000);
-    setTimeout(() => {
-      this.setState(tempState);
-      $node.animate({opacity:'100'}, 1000);
-    }, 1000)
-  }
-
-  handleExit(location, index, node) {
-    let tempState = this.state;
-    let $node = $(`#icon-${location}-${index}`);
-    $node.stop(true, true);
-    tempState[location][index] = location === 'topSkills' ? skillsInfoTop[index] : skillsInfoBottom[index];
-    $node.animate({opacity:'0'}, 1000);
-    $node.removeClass('info');
-    setTimeout(() => {
-      this.setState(tempState);
-      $node.animate({opacity:'100'}, 1000);
-    }, 1000)
-
+    super(props);
   }
 
   handleClick(location) {
     if (location === 'home') {
       $('#skills').animate({left: '200vw'}, 2000);
       $('#welcome-container').animate({left: '0'}, 2000);
-    } else if (location === 'portfolio') {
-      $('#skills').animate({left: '200vw'}, 2000);
-      $('#portfolio').animate({top: '0'}, 2000);
     }
-  }
-
-
-  renderSingleSkill(skill, row) {
-    if (skill.skill) {
-      return (
-        <Col
-          className="skill-icon"
-          id={`icon-${row}-${skill.index}`}
-          onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
-          onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
-          key={skill.skill}
-        >
-          <Row
-            align="center"
-            className="skill-icon-top"
-          >
-            <i className={skill.icon}></i>
-          </Row>
-          <Row align="center" className="skill-icon-bottom">
-            <span className="skill-text">{skill.skill}</span>
-          </Row>
-        </Col>
-        )
-      } else {
-        return (
-          <Col
-            className="skill-icon info"
-            id={`icon-${row}-${skill.index}`}
-            onMouseEnter={(event) => this.handleEntry(row, skill.index, event.target)}
-            onMouseLeave={(event) => this.handleExit(row, skill.index, event.target)}
-            key={`skill-${row}`}
-          >
-            <Row
-              align="center"
-              className="skill-icon-top"
-            >
-              <span>{skill.info}</span>
-            </Row>
-          </Col>
-        )
-      }
-  }
-
-
-
-  renderSkills(topSkills, bottomSkills) {
-    return (
-      <React.Fragment>
-        <Row className="skill-row">
-          {topSkills.map(skill => {
-            return this.renderSingleSkill(skill, 'topSkills');
-          })}
-        </Row>
-        <Row className="skill-row">
-        {bottomSkills.map(skill => {
-          return this.renderSingleSkill(skill, 'bottomSkills');
-          })}
-        </Row>
-      </React.Fragment>
-    )
   }
 
   render() {
@@ -180,16 +170,64 @@ class Skills extends Component {
               <div className="portfolio-btn" onClick={() => this.handleClick('home')}>Home</div>
             </div>
           </Col>
-          <Col md={{span:2, offset:3}}>
-            <div className="portfolio-btn-container">
-              <div className="portfolio-btn" onClick={() => this.handleClick('portfolio')}>Portfolio</div>
-            </div>
-          </Col>
         </Row>
         <Row align="center" id="skills-header-row">
           <h2>Skills</h2>
         </Row>
-        {this.renderSkills(this.state.topSkills, this.state.bottomSkills)}
+        <Row>
+          <Col>
+            <Row align="center">
+              <h3>Front End</h3>
+            </Row>
+            <hr className="skills-break"/>
+            {skills.frontEnd.map(skill => (
+              <SingleSkill
+                icon={skill.icon}
+                label={skill.label}
+                key={`skill-${skill.label}`}
+              />
+            ))}
+          </Col>
+          <Col>
+            <Row align="center">
+              <h3>Back End</h3>
+            </Row>
+            <hr className="skills-break"/>
+            {skills.backEnd.map(skill => (
+              <SingleSkill
+                icon={skill.icon}
+                label={skill.label}
+                key={`skill-${skill.label}`}
+              />
+            ))}
+          </Col>
+          <Col>
+            <Row align="center">
+              <h3>Testing/Deployment</h3>
+            </Row>
+            <hr className="skills-break"/>
+            {skills.deployment.map(skill => (
+              <SingleSkill
+                icon={skill.icon}
+                label={skill.label}
+                key={`skill-${skill.label}`}
+              />
+            ))}
+          </Col>
+          <Col>
+            <Row align="center">
+              <h3>Developer Tools</h3>
+            </Row>
+            <hr className="skills-break"/>
+            {skills.tools.map(skill => (
+              <SingleSkill
+                icon={skill.icon}
+                label={skill.label}
+                key={`skill-${skill.label}`}
+              />
+            ))}
+          </Col>
+        </Row>
       </Container>
     )
   }
