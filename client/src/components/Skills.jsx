@@ -43,7 +43,7 @@ const skills = {
       label: 'HTML5'
     },
     {
-      icon: <i className="fab fa-html5"></i>,
+      icon: <i className="fab fa-css3-alt"></i>,
       label: 'CSS3'
     },
     {
