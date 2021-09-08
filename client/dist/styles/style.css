@@ -1,3 +1,9 @@
+/*
+  ========================================================
+  General
+  ========================================================
+*/
+
 * {
   font-family: 'Roboto Mono', monospace;
 }
@@ -6,9 +12,29 @@
   display: none;
 }
 
+.highlight {
+  font-weight: bold;
+  color: #2196f3;
+  font-size: 125%;
+}
+
+
+
+
+
+/*
+  ========================================================
+  Starting Layout For DOM Elements
+  ========================================================
+*/
+
 #upper {
   height: 100vh;
   overflow: hidden;
+  width: auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 #particles-js {
@@ -17,6 +43,113 @@
   height: 300vh;
   position: absolute;
 }
+
+#skills {
+  position: absolute;
+  z-index: 1;
+  left: 200vw;
+  top: 0;
+  padding-top: 75px;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+#portfolio {
+  position: relative;
+  z-index: 1;
+  top: -500vh;
+}
+
+
+
+
+
+/*
+  ========================================================
+  Welcome / Home
+  ========================================================
+*/
+
+#hello {
+  height: 30vh;
+  align-items: center;
+}
+
+#hello-txt {
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: bold;
+  padding-top: 5vh;
+  opacity: 0;
+}
+
+#hello-container {
+  position: absolute;
+}
+
+#welcome-container {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10vh;
+  margin-right: 0;
+  width: 100vw;
+  min-width: 100%;
+}
+
+#welcome-div {
+  transition: 0.2s;
+}
+
+#welcome-name {
+  text-transform: uppercase;
+}
+
+#welcome-name:hover {
+  text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
+  transition-delay: .25s;
+}
+
+#welcome-btn-row {
+  height: 20vh;
+  align-items: flex-end;
+}
+
+#social-row {
+  height: 30vh;
+  align-content: flex-end;
+}
+
+.social {
+  display: inline-block;
+  padding: 15px 30px;
+  color: #2196f3;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 250%;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.social:hover {
+  color: #2196f3;
+  text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
+  cursor: pointer;
+  transition-delay: .25s;
+}
+
+
+
+
+
+/*
+  ========================================================
+  Portfolio
+  ========================================================
+*/
 
 #portfolio-header {
   font-weight: bold;
@@ -48,85 +181,8 @@
   width: 90%;
 }
 
-#hello {
-  height: 30vh;
-  align-items: center;
-}
-
-#hello-txt {
-  font-size: 60px;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-weight: bold;
-  padding-top: 5vh;
-  opacity: 0;
-}
-
-#hello-container {
-  position: absolute;
-}
-
-#welcome-container {
-  position: absolute;
-  color: white;
-  z-index: 1;
-  text-align: center;
-  margin-top: 10vh;
-  margin-right: 0;
-  width: 100vw;
-  min-width: 100%;
-}
-
-#skills {
-  position: absolute;
-  z-index: 1;
-  left: 200vw;
-  top: 0;
-  padding-top: 75px;
-  min-width: 100%;
-  min-height: 100vh;
-}
-
-#portfolio {
-  position: relative;
-  z-index: 1;
-  top: -500vh;
-}
-
 #portfolio-container {
   padding-top: 40px;
-}
-
-#upper {
-  width: auto;
-  height: 100vh;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
-.highlight {
-  font-weight: bold;
-  color: #2196f3;
-  font-size: 125%;
-}
-
-#welcome-div {
-  transition: 0.2s;
-}
-
-#welcome-name {
-  text-transform: uppercase;
-}
-
-#welcome-name:hover {
-  text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
-  transition-delay: .25s;
-}
-
-#welcome-btn-row {
-  height: 20vh;
-  align-items: flex-end;
 }
 
 .portfolio-btn-container {
@@ -162,7 +218,6 @@
 }
 
 .portfolio-row {
-  /* height: 45vh; */
   padding-top: 10vh;
   padding-bottom: 10vh;
   justify-content: center;
@@ -182,39 +237,37 @@
   cursor: pointer;
 }
 
-#social-row {
-  height: 30vh;
-  align-content: flex-end;
-}
-
-.social {
-  display: inline-block;
-  padding: 15px 30px;
-  color: #2196f3;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-decoration: none;
-  font-size: 250%;
-  overflow: hidden;
-  transition: 0.2s;
-}
-
-.social:hover {
-  color: #2196f3;
-  text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
-  cursor: pointer;
-  transition-delay: .25s;
-}
-
 .card-img {
   height: 300px;
 }
 
-/* #skills-container {
-  background: #eaf2fa;
-  color: rgb(121, 85, 72);
-  min-width: 100%;
-} */
+.carousel-img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+.carousel-description {
+  padding-top: 10px;
+}
+
+.portfolio-modal .modal-content {
+  background-color: #404040;
+  color: white;
+}
+
+.portfolio-btn.single-skill:hover {
+  cursor: default;
+}
+
+
+
+
+
+/*
+  ========================================================
+  Skills
+  ========================================================
+*/
 
 #skills-container {
   color: #2196f3;
@@ -226,23 +279,15 @@
   align-content: center;
 }
 
-/* .skills-btn-row {
-  padding-bottom: 75px;
-} */
-
 .skill-icon {
   height: 20vh;
   transition: background-color 1s;
   padding: 0 15px;
 }
 
-
 .skill-icon.info {
   background-color: #2558844b;
 }
-/* .skill-icon:hover {
-  background-color: #2558844b;
-} */
 
 .skill-icon-top {
   height: 66.66%;
@@ -265,6 +310,20 @@
 .skill-row {
   transition: opacity 500ms;
 }
+
+.skills-break {
+  border-bottom: 2px solid;
+}
+
+
+
+
+
+/*
+  ========================================================
+  About
+  ========================================================
+*/
 
 #about {
   position: absolute;
@@ -301,26 +360,4 @@
 
 #about-btn-row {
   padding-top: 40px;
-}
-
-.carousel-img {
-  max-width: 100%;
-  max-height: 70vh;
-}
-
-.carousel-description {
-  padding-top: 10px;
-}
-
-.portfolio-modal .modal-content {
-  background-color: #404040;
-  color: white;
-}
-
-.portfolio-btn.single-skill:hover {
-  cursor: default;
-}
-
-.skills-break {
-  border-bottom: 2px solid;
 }
