@@ -86,12 +86,12 @@ class Portfolio extends Component {
           description="Catbird is a React-Redux application allowing users to view clothing items/collections in an online store setting. It utilizes an API server interacting with PostgreSQL database to supply and store relevant information to the front-end"
           links={[
             {
-              icon: <i class="fab fa-github"></i>,
+              icon: <i className="fab fa-github"></i>,
               url: 'https://github.com/ChristianStutzman/Catbird',
               label: 'Front End'
             },
             {
-              icon: <i class="fab fa-github"></i>,
+              icon: <i className="fab fa-github"></i>,
               url: 'https://github.com/ChristianStutzman/SDC-Products',
               label: 'Back End'
             }
@@ -114,7 +114,7 @@ class Portfolio extends Component {
           description="Neighbr is a full stack application designed to connect users to members of their own community in an online forum. It features a robust landing page with effective copy to engage users, a main forum feed where users can post and view information, and a direct messaging system."
           links={[
             {
-              icon: <i class="fab fa-github"></i>,
+              icon: <i className="fab fa-github"></i>,
               url: 'https://github.com/ChristianStutzman/Neighbr',
               label: 'View On GitHub'
             }
@@ -134,7 +134,7 @@ class Portfolio extends Component {
           description="Blackjack is a standard blackjack application allowing users to place bets and play against the dealer. Users can then post their high scores on a competitive leaderboard."
           links={[
             {
-              icon: <i class="fab fa-github"></i>,
+              icon: <i className="fab fa-github"></i>,
               url: 'https://github.com/ChristianStutzman/blackjack',
               label: 'View On Github'
             },
