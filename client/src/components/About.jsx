@@ -9,10 +9,12 @@ class About extends Component {
   }
 
   handleClick(location) {
-    if (location === 'home') {
-      $('#about').animate({top: '300vh'}, 3000);
-      $('#welcome-container').animate({left: '0'}, 3000);
-    }
+    $('#about').animate({top: '500vh'}, 3000);
+    $('#welcome-container').animate({left: '0'}, 3000);
+    $('#app').css({height: '100vh'}, 3000);
+    setTimeout(() => {
+      $('#about').toggleClass('hide');
+    }, 3000);
   }
 
   render() {
@@ -31,7 +33,7 @@ class About extends Component {
           </Col>
         </Row>
         <Row id="about-img-row">
-          <Col sm={12} md={5}>
+          <Col sm={12} md={5} align="center">
             <Image id="about-img" src="./assets/Headshot.png" />
           </Col>
           <Col id="about-text">
