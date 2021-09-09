@@ -158,6 +158,10 @@ class Skills extends Component {
     if (location === 'home') {
       $('#skills').animate({left: '200vw'}, 2000);
       $('#welcome-container').animate({left: '0'}, 2000);
+      $('#app').css({height: '100vh'}, 2000);
+      setTimeout(() => {
+        $('#skills').toggleClass('hide');
+      }, 2000);
     }
   }
 

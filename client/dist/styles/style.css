@@ -40,7 +40,7 @@
 #particles-js {
   background-color: black;
   width: 100vw;
-  height: 300vh;
+  height: 700vh;
   position: absolute;
 }
 
@@ -52,15 +52,29 @@
   padding-top: 75px;
   min-width: 100%;
   min-height: 100vh;
+  /* display: none; */
 }
 
 #portfolio {
   position: relative;
   z-index: 1;
   top: -500vh;
+  /* display: none; */
 }
 
+#hello {
+  height: 30vh;
+  align-items: center;
+}
 
+#about {
+  position: absolute;
+  z-index: 1;
+  min-height: 100vh;
+  min-width: 100vw;
+  top: 500vh;
+  /* display: none; */
+}
 
 
 
@@ -69,11 +83,6 @@
   Welcome / Home
   ========================================================
 */
-
-#hello {
-  height: 30vh;
-  align-items: center;
-}
 
 #hello-txt {
   font-size: 60px;
@@ -324,14 +333,6 @@
   About
   ========================================================
 */
-
-#about {
-  position: absolute;
-  z-index: 1;
-  min-height: 100vh;
-  min-width: 100vw;
-  top: 300vh;
-}
 
 #about-header {
   font-weight: bold;
