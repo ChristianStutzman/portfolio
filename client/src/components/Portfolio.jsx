@@ -23,6 +23,9 @@ class Portfolio extends Component {
     if (location === 'home') {
       $('#portfolio').animate({top: '-500vh'}, 4000);
       $('#welcome-container').animate({left: '0'}, 4000);
+      setTimeout(() => {
+        $('#portfolio').toggleClass('hide')
+      }, 4000);
     }
   }
 

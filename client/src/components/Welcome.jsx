@@ -7,6 +7,9 @@ import renderParticles from './particles.js';
 class Welcome extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      clickDisabled: false
+    }
   }
 
 
@@ -17,16 +20,42 @@ class Welcome extends Component {
   }
 
   handleClick(location) {
-    if (location === 'portfolio') {
-      $('#welcome-container').animate({left: '-100vw'}, 2000);
-      $('#portfolio').animate({top: '0'}, 4000);
-      $('#app').css({height: '300vh'}, 2000);
-    } else if (location === 'skills') {
-      $('#welcome-container').animate({left: '-100vw'}, 2000);
-      $('#skills').animate({left: '0'}, 2000);
-    } else if (location === 'about') {
-      $('#welcome-container').animate({left: '-100vw'}, 3000);
-      $('#about').animate({top: '0'}, 3000);
+    if (!this.state.clickDisabled) {
+      this.setState({clickDisabled: true});
+      if (location === 'portfolio') {
+        $('#welcome-container').animate({left: '-100vw'}, 2000);
+        $('#portfolio').toggleClass('hide');
+        $('#portfolio').animate({top: '0'}, 4000);
+        $('#app').css({height: '300vh'}, 2000);
+      } else if (location === 'skills') {
+        $('#welcome-container').animate({left: '-100vw'}, 2000);
+        $('#skills').toggleClass('hide');
+        $('#skills').animate({left: '0'}, 2000);
+        let height;
+        if (window.innerWidth <= 375) {
+          height = '1000vw';
+        } else if (window.innerWidth <= 475) {
+          height = '750vw';
+        } else if (window.innerWidth <= 505) {
+          height = '550vw';
+        } else if (window.innerWidth <= 768) {
+          height = '350vw';
+        } else if (window.innerWidth <= 1045) {
+          height = '175vw';
+        }
+        $('#app').css({height: height}, 2000);
+      } else if (location === 'about') {
+        $('#welcome-container').animate({left: '-100vw'}, 3000);
+        $('#about').toggleClass('hide');
+        $('#about').animate({top: '0'}, 3000);
+        if (window.innerWidth <= 1050) {
+          $('#app').css({height: 'calc(280vh - 45vw)'}, 3000);
+        }
+      }
+
+      setTimeout(() => {
+        this.setState({clickDisabled: false})
+      }, 2000);
     }
   }
 
