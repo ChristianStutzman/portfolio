@@ -233,6 +233,6 @@ class Skills extends Component {
   }
 }
 
-render(<Skills />, document.querySelector('#skills'));
+// render(<Skills />, document.querySelector('#skills'));
 
 export default Skills;
