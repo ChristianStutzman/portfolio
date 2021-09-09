@@ -47,6 +47,6 @@ class About extends Component {
   }
 }
 
-// render(<About />, document.getElementById('about'));
+
 
 export default About

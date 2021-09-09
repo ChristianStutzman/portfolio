@@ -1,14 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 import { render } from 'react-dom';
-// import App from './components/App.jsx';
 import renderParticles from './components/particles.js';
 import Welcome from './components/Welcome.jsx';
 const Portfolio = lazy(() => import('./components/Portfolio.jsx'));
 const Skills = lazy(() => import('./components/Skills.jsx'));
 const About = lazy(() => import('./components/About.jsx'));
-// import Portfolio from './components/Portfolio.jsx';
-// import Skills from './components/Skills.jsx';
-// import About from './components/About.jsx';
 
 
 
