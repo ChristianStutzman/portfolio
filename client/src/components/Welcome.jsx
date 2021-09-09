@@ -111,6 +111,6 @@ class Welcome extends Component {
   }
 }
 
-render(<Welcome />, document.getElementById('welcome'));
+// render(<Welcome />, document.getElementById('welcome'));
 
 export default Welcome;

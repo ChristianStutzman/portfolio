@@ -33,7 +33,7 @@ class About extends Component {
           </Col>
         </Row>
         <Row id="about-img-row">
-          <Col sm={12} md={5} align="center">
+          <Col sm={12} md={5} align="center" id="about-img-col">
             <Image id="about-img" src="./assets/Headshot.png" />
           </Col>
           <Col id="about-text">
@@ -47,6 +47,6 @@ class About extends Component {
   }
 }
 
-render(<About />, document.getElementById('about'));
+// render(<About />, document.getElementById('about'));
 
 export default About

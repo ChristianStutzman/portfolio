@@ -153,6 +153,6 @@ class Portfolio extends Component {
   }
 }
 
-render(<Portfolio />, document.getElementById('portfolio'));
+// render(<Portfolio />, document.getElementById('portfolio'));
 
 export default Portfolio;
