@@ -18,17 +18,17 @@ render(
     <div id="welcome">
       <Welcome />
     </div>
-    <div id="portfolio">
+    <div id="portfolio" className="hide">
       <Suspense fallback={<h2>Loading...</h2>}>
         <Portfolio />
       </Suspense>
     </div>
-    <div id="skills">
+    <div id="skills" className="hide">
       <Suspense fallback={<h2>Loading...</h2>}>
         <Skills />
       </Suspense>
     </div>
-    <div id="about">
+    <div id="about" className="hide">
       <Suspense fallback={<h2>Loading...</h2>}>
         <About />
       </Suspense>

@@ -350,13 +350,18 @@
 }
 
 #about-img-row {
-  padding-top: 8vh;
+  padding-top: 5vh;
   padding-left: 5vw;
+}
+
+#about-img-col {
+  padding-top: 10vw;
 }
 
 #about-text {
   color: white;
-  padding-right: 5rem;
+  padding-right: 2rem;
+  padding-top: 10vw;
 }
 
 #about-btn-row {
