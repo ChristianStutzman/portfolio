@@ -32,15 +32,15 @@ class Welcome extends Component {
         $('#skills').toggleClass('hide');
         $('#skills').animate({left: '0'}, 2000);
         let height;
-        if (screen.width <= 375) {
+        if (window.innerWidth <= 375) {
           height = '1000vw';
-        } else if (screen.width <= 475) {
+        } else if (window.innerWidth <= 475) {
           height = '750vw';
-        } else if (screen.width <= 505) {
+        } else if (window.innerWidth <= 505) {
           height = '550vw';
-        } else if (screen.width <= 768) {
+        } else if (window.innerWidth <= 768) {
           height = '350vw';
-        } else if (screen.width <= 1045) {
+        } else if (window.innerWidth <= 1045) {
           height = '175vw';
         }
         $('#app').css({height: height}, 2000);
@@ -48,6 +48,9 @@ class Welcome extends Component {
         $('#welcome-container').animate({left: '-100vw'}, 3000);
         $('#about').toggleClass('hide');
         $('#about').animate({top: '0'}, 3000);
+        if (window.innerWidth <= 1050) {
+          $('#app').css({height: 'calc(280vh - 45vw)'}, 3000);
+        }
       }
 
       setTimeout(() => {
