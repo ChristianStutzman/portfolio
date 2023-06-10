@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { render } from 'react-dom';
-import $ from 'jquery';
-import { TransitionGroup, CSSTransition, Transition } from 'react-transition-group';
+import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { render } from "react-dom";
+import $ from "jquery";
+import {
+  TransitionGroup,
+  CSSTransition,
+  Transition,
+} from "react-transition-group";
 import {
   SiRedux,
-  SiMaterialUi,
+  // SiMaterialUi,
   SiPostgresql,
   SiMongodb,
   SiMysql,
@@ -17,137 +21,135 @@ import {
   SiWebpack,
   SiBabel,
   SiVim,
-  SiPostman
-} from 'react-icons/si';
-import { WiCloudy } from 'react-icons/wi';
-import { DiScrum } from 'react-icons/di';
-import { BiTransfer } from 'react-icons/bi';
-import SingleSkill from './SingleSkill.jsx';
+  SiPostman,
+} from "react-icons/si";
+import { WiCloudy } from "react-icons/wi";
+import { DiScrum } from "react-icons/di";
+import { BiTransfer } from "react-icons/bi";
+import SingleSkill from "./SingleSkill.jsx";
 
 const skills = {
   frontEnd: [
     {
       icon: <i className="fab fa-js"></i>,
-      label: 'JavaScript'
+      label: "JavaScript",
     },
     {
       icon: <i className="fab fa-react"></i>,
-      label: 'React'
+      label: "React",
     },
     {
       icon: <SiRedux />,
-      label: 'Redux'
+      label: "Redux",
     },
     {
       icon: <i className="fab fa-html5"></i>,
-      label: 'HTML5'
+      label: "HTML5",
     },
     {
       icon: <i className="fab fa-css3-alt"></i>,
-      label: 'CSS3'
+      label: "CSS3",
     },
     {
       icon: <i className="fab fa-bootstrap"></i>,
-      label: 'Bootstrap'
+      label: "Bootstrap",
     },
-    {
-      icon: <SiMaterialUi />,
-      label: 'Material-UI'
-    }
+    // {
+    //   icon: <SiMaterialUi />,
+    //   label: "Material-UI",
+    // },
   ],
   backEnd: [
     {
       icon: <i className="fab fa-node-js"></i>,
-      label: 'NodeJS'
+      label: "NodeJS",
     },
     {
       icon: <i className="fas fa-server"></i>,
-      label: 'Express'
+      label: "Express",
     },
     {
       icon: <SiPostgresql />,
-      label: 'PostgreSQL'
+      label: "PostgreSQL",
     },
     {
       icon: <SiMongodb />,
-      label: 'MongoDB'
+      label: "MongoDB",
     },
     {
       icon: <SiMysql />,
-      label: 'MySQL'
+      label: "MySQL",
     },
     {
       icon: <SiFirebase />,
-      label: 'Firebase'
+      label: "Firebase",
     },
     {
       icon: <BiTransfer />,
-      label: 'RESTful API Development'
-    }
+      label: "RESTful API Development",
+    },
   ],
   deployment: [
     {
       icon: <SiJest />,
-      label: 'Jest'
+      label: "Jest",
     },
     {
       icon: <SiMocha />,
-      label: 'Mocha'
+      label: "Mocha",
     },
     {
       icon: <i className="fas fa-coffee" aria-hidden="true"></i>,
-      label: 'Chai'
+      label: "Chai",
     },
     {
       icon: <WiCloudy />,
-      label: 'New Relic'
+      label: "New Relic",
     },
     {
       icon: <i className="fab fa-aws"></i>,
-      label: 'AWS'
+      label: "AWS",
     },
     {
       icon: <SiHeroku />,
-      label: 'Heroku'
+      label: "Heroku",
     },
     {
       icon: <i className="fab fa-docker"></i>,
-      label: 'Docker'
-    }
+      label: "Docker",
+    },
   ],
   tools: [
     {
       icon: <i className="fab fa-git-alt"></i>,
-      label: 'Git'
+      label: "Git",
     },
     {
       icon: <i className="fab fa-npm"></i>,
-      label: 'NPM'
+      label: "NPM",
     },
     {
       icon: <SiWebpack />,
-      label: 'Webpack'
+      label: "Webpack",
     },
     {
       icon: <SiBabel />,
-      label: 'Babel'
+      label: "Babel",
     },
     {
       icon: <SiPostman />,
-      label: 'Postman'
+      label: "Postman",
     },
     {
       icon: <SiVim />,
-      label: 'VIM'
+      label: "VIM",
     },
     {
       icon: <DiScrum />,
-      label: 'Scrum'
-    }
-  ]
-}
-
-
+      label: "Scrum",
+    },
+  ],
+};
 
 class Skills extends Component {
   constructor(props) {
@@ -155,12 +157,12 @@ class Skills extends Component {
   }
 
   handleClick(location) {
-    if (location === 'home') {
-      $('#skills').animate({left: '200vw'}, 2000);
-      $('#welcome-container').animate({left: '0'}, 2000);
-      $('#app').css({height: '100vh'}, 2000);
+    if (location === "home") {
+      $("#skills").animate({ left: "200vw" }, 2000);
+      $("#welcome-container").animate({ left: "0" }, 2000);
+      $("#app").css({ height: "100vh" }, 2000);
       setTimeout(() => {
-        $('#skills').toggleClass('hide');
+        $("#skills").toggleClass("hide");
       }, 2000);
     }
   }
@@ -171,7 +173,12 @@ class Skills extends Component {
         <Row className="portfolio-btn-row skills-btn-row">
           <Col md={2}>
             <div className="portfolio-btn-container">
-              <div className="portfolio-btn" onClick={() => this.handleClick('home')}>Home</div>
+              <div
+                className="portfolio-btn"
+                onClick={() => this.handleClick("home")}
+              >
+                Home
+              </div>
             </div>
           </Col>
         </Row>
@@ -183,8 +190,8 @@ class Skills extends Component {
             <Row align="center">
               <h3>Front End</h3>
             </Row>
-            <hr className="skills-break"/>
-            {skills.frontEnd.map(skill => (
+            <hr className="skills-break" />
+            {skills.frontEnd.map((skill) => (
               <SingleSkill
                 icon={skill.icon}
                 label={skill.label}
@@ -196,8 +203,8 @@ class Skills extends Component {
             <Row align="center">
               <h3>Back End</h3>
             </Row>
-            <hr className="skills-break"/>
-            {skills.backEnd.map(skill => (
+            <hr className="skills-break" />
+            {skills.backEnd.map((skill) => (
               <SingleSkill
                 icon={skill.icon}
                 label={skill.label}
@@ -209,8 +216,8 @@ class Skills extends Component {
             <Row align="center">
               <h3>Testing/Deployment</h3>
             </Row>
-            <hr className="skills-break"/>
-            {skills.deployment.map(skill => (
+            <hr className="skills-break" />
+            {skills.deployment.map((skill) => (
               <SingleSkill
                 icon={skill.icon}
                 label={skill.label}
@@ -222,8 +229,8 @@ class Skills extends Component {
             <Row align="center">
               <h3>Developer Tools</h3>
             </Row>
-            <hr className="skills-break"/>
-            {skills.tools.map(skill => (
+            <hr className="skills-break" />
+            {skills.tools.map((skill) => (
               <SingleSkill
                 icon={skill.icon}
                 label={skill.label}
@@ -233,10 +240,8 @@ class Skills extends Component {
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 }
-
-
 
 export default Skills;
