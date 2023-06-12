@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import { render } from "react-dom";
 import $ from "jquery";
 import PortfolioModal from "./PortfolioModal.jsx";
