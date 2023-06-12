@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Col, Row, Image } from 'react-bootstrap';
-import $ from 'jquery';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { Col, Row, Image } from "react-bootstrap";
+import $ from "jquery";
 
 class About extends Component {
   constructor(props) {
@@ -9,11 +9,11 @@ class About extends Component {
   }
 
   handleClick(location) {
-    $('#about').animate({top: '500vh'}, 3000);
-    $('#welcome-container').animate({left: '0'}, 3000);
-    $('#app').css({height: '100vh'}, 3000);
+    $("#about").animate({ top: "500vh" }, 3000);
+    $("#welcome-container").animate({ left: "0" }, 3000);
+    $("#app").css({ height: "100vh" }, 3000);
     setTimeout(() => {
-      $('#about').toggleClass('hide');
+      $("#about").toggleClass("hide");
     }, 3000);
   }
 
@@ -23,7 +23,12 @@ class About extends Component {
         <Row id="about-btn-row">
           <Col md={2}>
             <div className="portfolio-btn-container">
-              <div className="portfolio-btn" onClick={() => this.handleClick('home')}>Home</div>
+              <div
+                className="portfolio-btn"
+                onClick={() => this.handleClick("home")}
+              >
+                Home
+              </div>
             </div>
           </Col>
         </Row>
@@ -37,16 +42,46 @@ class About extends Component {
             <Image id="about-img" src="./assets/Headshot.png" />
           </Col>
           <Col id="about-text">
-            <p>Hi, my name is Christian, and I am a software engineer.</p>
-            <p>Software engineering was something that I had always been told I had the mindset for, and as soon as I started writing code, I immediately knew that this was something I wanted to pursue as a career. It played into all of the strengths I had acquired over the years in the service industry, from teamwork and communication to my business acumen from undergrad.</p>
-            <p>I love how this is a field where you can build things that can change the world out of nothing but a computer and a text editor. But most of all, I love that this is a field that is constantly changing and evolving, and to keep up you need to be in a state of constant learning and innovation. For the future I envision myself in a full-time software engineering role, where I can continue to pursue my dreams of creating unique, full-stack applications that focus on delivering the greatest possible experience for the users that interact with them.</p>
+            <p>
+              Hi, I'm Christian, a dedicated software engineer with a passion
+              for crafting innovative solutions. From the moment I started
+              coding, I knew it was the career path I had been seeking. With a
+              strong foundation in JavaScript, React, Node.js, and databases
+              like PostgreSQL and MongoDB, I thrive on the challenge of creating
+              exceptional user experiences.
+            </p>
+
+            <p>
+              My experience spans various roles, including serving as a
+              Front-End Web Developer at Invoice Maker LLC. In this position, I
+              successfully managed interns, orchestrated targeted sprints, and
+              collaborated with prominent third-party services like Stripe,
+              Square, and PayPal to integrate secure payment methods.
+              Additionally, I designed and implemented new product features,
+              ranging from localization and custom account pages to estimates
+              and receipts.
+            </p>
+
+            <p>
+              In my current role as a Web Developer at Myles Price, I actively
+              contribute to website optimization, leveraging my design and
+              problem-solving skills to deliver impactful solutions. I've
+              independently redesigned the homepage to improve customization
+              options and SEO performance. Moreover, I've refined website schema
+              and URL structures to elevate SEO performance and enhance Google
+              rankings.
+            </p>
+
+            <p>
+              With a solid background in business management, I bring a
+              well-rounded perspective to my work. Let's collaborate and make a
+              positive impact through innovative software solutions.
+            </p>
           </Col>
         </Row>
       </React.Fragment>
-    )
+    );
   }
 }
 
-
-
-export default About
+export default About;

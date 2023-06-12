@@ -9,7 +9,7 @@ import {
 } from "react-transition-group";
 import {
   SiRedux,
-  // SiMaterialUi,
+  SiMui,
   SiPostgresql,
   SiMongodb,
   SiMysql,
@@ -54,10 +54,10 @@ const skills = {
       icon: <i className="fab fa-bootstrap"></i>,
       label: "Bootstrap",
     },
-    // {
-    //   icon: <SiMaterialUi />,
-    //   label: "Material-UI",
-    // },
+    {
+      icon: <SiMui />,
+      label: "Material-UI",
+    },
   ],
   backEnd: [
     {
@@ -186,7 +186,7 @@ class Skills extends Component {
           <h2>Skills</h2>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} sm={6} xl={3} className="skill-column">
             <Row align="center">
               <h3>Front End</h3>
             </Row>
@@ -199,7 +199,7 @@ class Skills extends Component {
               />
             ))}
           </Col>
-          <Col>
+          <Col xs={12} sm={6} xl={3} className="skill-column">
             <Row align="center">
               <h3>Back End</h3>
             </Row>
@@ -212,7 +212,7 @@ class Skills extends Component {
               />
             ))}
           </Col>
-          <Col>
+          <Col xs={12} sm={6} xl={3} className="skill-column">
             <Row align="center">
               <h3>Testing/Deployment</h3>
             </Row>
@@ -225,7 +225,7 @@ class Skills extends Component {
               />
             ))}
           </Col>
-          <Col>
+          <Col xs={12} sm={6} xl={3} className="skill-column">
             <Row align="center">
               <h3>Developer Tools</h3>
             </Row>
